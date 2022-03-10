@@ -35,13 +35,14 @@
         
         * {
             box-sizing: border-box;
-        }
+            }
         body {
             margin: 0;
             padding: 0;
+            width: 100%;
             background-color: #0C1017;
             font-family: 'Prompt', sans-serif;
-            }
+            }    
         img.img-fluid {
             margin: 2rem 0 8rem;
             }
@@ -62,7 +63,15 @@
             background-color: #fff;
             color: #50BAD4;
             } 
-            
+        #page-container {
+            position: relative;
+            min-height:100vh;
+            width: auto;
+            }    
+        #content-wrap {
+            padding-bottom: 10rem;
+            }
+
         /*Discord Email Form*/    
         button.btn {
             background-color: #50BAD4;
@@ -78,7 +87,7 @@
         button.btn:hover {
             background-color: #fff;
             color: #50BAD4;
-        }    
+            }    
         h1.h1-text {
             font-size: 3.4375rem;
             color: #fff;
@@ -112,7 +121,7 @@
             } 
         .form-check-label {
             font-size: 1rem;
-        }        
+            }        
         .mb-3 {
             margin-bottom: 1rem!important;
             margin: 0 2rem;
@@ -124,14 +133,12 @@
             justify-content:space-between;
             }
         div.container {
-            margin-top: 6rem;
-            bottom: 0;
-            position: relative;
+            width: auto;
+            max-width: 80%;
             }
         span.copyright {
             color: #fff;
             text-align: center;
-
             }
         a.pp {
             text-decoration: none;
@@ -174,32 +181,34 @@
 
         /* Media Queries */        
         @media screen and (max-width: 921px) {    
-        h1.h1-text {
-            font-size: 3rem;
-            color: #fff;
+            h1.h1-text {
+                font-size: 3rem;
+                color: #fff;
+                }
             }
-            }
-        @media screen and (max-width: 365px) {
-            #form-control {
-                max-width: 13rem;
-                } 
+        @media screen and (max-width: 535px) {
+            div.container.text-center, footer {
+                justify-content: center;
+                }
             }
         @media screen and (max-width: 460px) {
             img.img-fluid {
-            margin: 2rem 0 2rem;
-            }
-            button.email-button {
-               padding: 1rem 2rem;
-               font-size: .85rem;
-               letter-spacing: .3rem;
+                margin: 2rem 0 2rem;
                 }
-            footer {
-                justify-content: center;
+            button.email-button {
+                padding: 1rem 2rem;
+                font-size: .85rem;
+                letter-spacing: .3rem;
                 }
             div.col-md-4.d-flex.align-items-center {
                 justify-content: center;
                 }    
-            }  
+            } 
+        @media screen and (max-width: 365px) {
+            #form-control {
+                max-width: 13rem;
+                } 
+            } 
         @media screen and (max-width: 302px) {
             button.email-button {
                 padding: 1rem 1.1rem;
@@ -208,7 +217,7 @@
                 }
             #form-control {
                 max-width: 12rem;
-            }    
+                }    
             }    
     </style>
 
@@ -219,53 +228,56 @@
     <!-- [Enter Google Manager Here]-->
 </head>
 <body>
-    <!-- NFT Image -->
-    <div class="text-center">
-        <img class="img-fluid" src="NFT.gif" title="SliceIX" alt="SliceIX" />
-    </div>
-
-    <!-- Discord Button -->
-    <div class="text-center">
-        <button class="email-button" alt="Access Discord" type="button" onclick="relocate_id()">UNLOCK DISCORD</button>
-    </div>
-    <h1 class="h1-text">
-          <span
-            class="h1-email"
-          ></span>
-        </h1>
-        <p class="p-text" id="p-email"></p>
-    
-    <!-- Footer -->
-    <div class="container">
-        <footer class="d-flex flex-wrap align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center">
-            <span class="copyright">&copy; 2022 Company, Inc | <a class="pp" alt="Privacy Policy" type="button" data-bs-toggle="modal" data-bs-target="#ppModal">Privacy Policy</a></span>
+    <div id="page-container">
+        <div id="content-wrap">
+            <!-- NFT Image -->
+            <div class="text-center">
+                <img class="img-fluid" src="NFT.gif" title="SliceIX" alt="SliceIX" />
             </div>
 
-            <!-- Modal -->
-            <div class="modal fade" id="ppModal" tabindex="-1" aria-labelledby="ppModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="ppModalLabel">Privacy Policy & Terms of Use</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-modal" data-bs-dismiss="modal">Close</button>
-                </div>
-                </div>
+            <!-- Discord Button -->
+            <div class="text-center">
+                <button class="email-button" alt="Access Discord" type="button" onclick="relocate_id()">UNLOCK DISCORD</button>
             </div>
-            </div>
+            <h1 class="h1-text">
+                <span
+                    class="h1-email"
+                ></span>
+                </h1>
+                <p class="p-text" id="p-email"></p>
+        </div>
+        <!-- Footer -->
+        <div class="container text-center">
+            <footer class="d-flex flex-wrap align-items-center mt-auto py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                <span class="copyright">&copy; 2022 Company, Inc | <a class="pp" alt="Privacy Policy" type="button" data-bs-toggle="modal" data-bs-target="#ppModal">Privacy Policy</a></span>
+                </div>
 
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a class="bi" href="#"><i class="fa-brands fa-twitter"></i></a></li>
-            <li class="ms-3"><a class="bi" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-            <li class="ms-3"><a class="bi" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
-            </ul>
-        </footer>
+                <!-- Modal -->
+                <div class="modal fade" id="ppModal" tabindex="-1" aria-labelledby="ppModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ppModalLabel">Privacy Policy & Terms of Use</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-modal" data-bs-dismiss="modal">Close</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="bi" href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li class="ms-3"><a class="bi" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class="ms-3"><a class="bi" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                </ul>
+            </footer>
+        </div>
     </div>
     
     <!-- Javascript -->
